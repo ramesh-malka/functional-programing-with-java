@@ -6,10 +6,23 @@ public class FP01Functional {
 
     public static void main(String[] args) {
         // print all numbers in list - Functional approach
-        printAllNumbersInListFunctional(List.of(12, 9, 13, 4, 6, 2, 4, 5, 22, 12, 4, 15));
+        List<Integer> numbers = List.of(12, 9, 13, 4, 6, 2, 4, 5, 22, 12, 4, 15);
+//        printAllNumbersInListFunctional(numbers);
+        printEvenNumbersInListFunctional(numbers);
     }
 
-    public static void printNumber(int number){
+    private static void printEvenNumbersInListFunctional(List<Integer> numbers) {
+
+        numbers.stream()
+                .filter(FP01Functional::isEven) // filter - only allow even numbers
+                .forEach(System.out::println);
+    }
+
+    private static boolean isEven(int number) {
+        return number % 2 == 0;
+    }
+
+    public static void printNumber(int number) {
         System.out.println(number);
     }
 
