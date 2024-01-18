@@ -14,13 +14,14 @@ public class FP01Functional {
     private static void printEvenNumbersInListFunctional(List<Integer> numbers) {
 
         numbers.stream()
-                .filter(FP01Functional::isEven) // filter - only allow even numbers
+//                .filter(FP01Functional::isEven) // filter - only allow even numbers
+                .filter(number -> number % 2 == 0) // lambda expression
                 .forEach(System.out::println);
     }
 
-    private static boolean isEven(int number) {
+   /* private static boolean isEven(int number) {
         return number % 2 == 0;
-    }
+    }*/
 
     public static void printNumber(int number) {
         System.out.println(number);
